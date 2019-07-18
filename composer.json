@@ -14,5 +14,5 @@
         {
             "Humi\\JsonApiConnector\\": "src"
         }
-    },
+    }
 }
