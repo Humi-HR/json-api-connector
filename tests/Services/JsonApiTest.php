@@ -26,7 +26,7 @@ class JsonApiTest extends BaseTestCase
         parent::setup();
 
         $this->setFixtureRoot(
-            base_path('/tests/Modules/CommonComponents/Services/Fixtures/JsonApi')
+            base_path('/vendor/humi/json-api-connector/tests/Services/Fixtures/JsonApi')
         );
     }
 
