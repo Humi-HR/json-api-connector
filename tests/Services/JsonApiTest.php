@@ -2,10 +2,10 @@
 
 namespace App\Tests\Modules\CommonComponents\Services;
 
-use App\Modules\CommonComponents\Services\JsonApi;
+use Humi\JsonApiConnector\Services\JsonApi;
 use App\Tests\BaseTestCase;
-use App\Tests\Modules\CommonComponents\Fixtures\Resources\TestResource;
-use App\Tests\Modules\CommonComponents\Fixtures\Resources\TestResourceCollection;
+use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResource;
+use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResourceCollection;
 use App\Tests\Traits\JsonFixtures;
 use App\Tests\Traits\MocksGuzzle;
 use Exception;

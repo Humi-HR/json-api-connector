@@ -3,7 +3,7 @@
 namespace App\Tests\Modules\CommonComponents\Fixtures\Resources;
 
 use App\Http\Resources\JsonResource;
-use App\Modules\CommonComponents\Interfaces\Resources\ApiResource;
+use Humi\JsonApiConnector\Interfaces\ApiResource;
 
 class TestResource extends JsonResource implements ApiResource
 {
