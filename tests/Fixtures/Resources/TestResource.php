@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Modules\CommonComponents\Fixtures\Resources;
+namespace Humi\JsonApiConnector\Tests\Fixtures\Resources;
 
 use App\Http\Resources\JsonResource;
 use Humi\JsonApiConnector\Interfaces\ApiResource;

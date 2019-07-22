@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Tests\Modules\CommonComponents\Services;
+namespace Humi\JsonApiConnector\Tests\Services;
 
 use Humi\JsonApiConnector\Services\JsonApi;
 use App\Tests\BaseTestCase;
 use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResource;
 use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResourceCollection;
-use App\Tests\Traits\JsonFixtures;
-use App\Tests\Traits\MocksGuzzle;
+use Humi\JsonApiConnector\Tests\Traits\JsonFixtures;
+use Humi\JsonApiConnector\Tests\Traits\MocksGuzzle;
 use Exception;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
