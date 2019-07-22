@@ -59,10 +59,31 @@ class Company extends PayrollResource implements ApiResource
 Performing a get request
 
 ```php
-        return app(PayrollService::class)
-            ->show(
-                Benefit::class, // resource class
-                $entityId, // id for use in URI
-                $request->query() // query parameters
-            );
+return app(PayrollService::class)
+    ->show(
+        Benefit::class, // resource class
+        $entityId, // id for use in URI
+        $request->query() // query parameters
+    );
+```
+
+## Customizing headers/values based on other models
+
+You can customize the headers/values that are passed based on other models
+For example, based on a value in our Company model, we want to set a tenant header
+We can then use `$this->getParam('tenantId')` in our service to reference the set value
+
+```php
+class PayrollApi extends JsonApi
+{
+    ...
+    
+    public function for(Model $entity): self
+    {
+        if ($entity instanceof Company) {
+            $this->setTenantId($entity->pr_tenant_id);
+            $this->setCompanyId($entity->pr_company_id);
+        }
+    }
+}
 ```
