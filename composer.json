@@ -13,7 +13,7 @@
         "psr-4":
         {
             "Humi\\JsonApiConnector\\": "src/",
-            "Humi\\JsonApiConnector\\Tests": "tests/"
+            "Humi\\JsonApiConnector\\Tests\\": "tests/"
         }
     }
 }
