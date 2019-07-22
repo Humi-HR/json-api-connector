@@ -35,7 +35,7 @@ Use the base laravel json api class to represent your external resources.
 They should implement Interfaces/ApiResource
 
 ```php
-class Company extends PayrollResource implements ApiResource
+class Company extends JsonResource implements ApiResource
 {
     protected $type = 'companies';
 
