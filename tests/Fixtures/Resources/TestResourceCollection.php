@@ -2,9 +2,9 @@
 
 namespace Humi\JsonApiConnector\Tests\Fixtures\Resources;
 
-use App\Http\Resources\JsonResourceCollection;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class TestResourceCollection extends JsonResourceCollection
+class TestResourceCollection extends ResourceCollection
 {
     public $collects = TestResource::class;
 }

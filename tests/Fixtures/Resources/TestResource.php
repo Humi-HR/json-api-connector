@@ -2,7 +2,7 @@
 
 namespace Humi\JsonApiConnector\Tests\Fixtures\Resources;
 
-use App\Http\Resources\JsonResource;
+use Humi\JsonApiConnector\Http\Resources\JsonResource;
 use Humi\JsonApiConnector\Interfaces\ApiResource;
 
 class TestResource extends JsonResource implements ApiResource

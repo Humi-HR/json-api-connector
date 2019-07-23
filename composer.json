@@ -7,6 +7,12 @@
     }],
     "require":
     {},
+    "require-dev":
+    {
+        "orchestra/testbench": "^3.5",
+        "phpunit/phpunit": "7.5.x-dev",
+        "guzzlehttp/guzzle": "^6.3@dev"
+    },
     "minimum-stability": "dev",
     "autoload":
     {

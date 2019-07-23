@@ -3,7 +3,6 @@
 namespace Humi\JsonApiConnector\Tests\Services;
 
 use Humi\JsonApiConnector\Services\JsonApi;
-use App\Tests\BaseTestCase;
 use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResource;
 use Humi\JsonApiConnector\Tests\Fixtures\Resources\TestResourceCollection;
 use Humi\JsonApiConnector\Tests\Traits\JsonFixtures;
@@ -13,11 +12,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Orchestra\Testbench\TestCase;
 
 /**
  * @group JsonApi
  */
-class JsonApiTest extends BaseTestCase
+class JsonApiTest extends TestCase
 {
     use MocksGuzzle, JsonFixtures;
 
@@ -26,7 +26,7 @@ class JsonApiTest extends BaseTestCase
         parent::setup();
 
         $this->setFixtureRoot(
-            base_path('/vendor/humi/json-api-connector/tests/Services/Fixtures/JsonApi')
+            __dir__.'/../Services/Fixtures/JsonApi'
         );
     }
 
