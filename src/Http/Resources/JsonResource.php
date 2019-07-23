@@ -3,6 +3,7 @@
 namespace Humi\JsonApiConnector\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource as BaseJsonResource;
+use Illuminate\Support\Collection;
 
 abstract class JsonResource extends BaseJsonResource
 {
@@ -31,5 +32,15 @@ abstract class JsonResource extends BaseJsonResource
     public function getType(): string
     {
         return $this->type;
+    }
+
+    public function extractIncluded(BaseJsonResource $resource, string $include): Collection
+    {
+        return collect($resource->includeJson)
+            ->filter(
+                function ($included) use ($include) {
+                    return $included['type'] === $include;
+                }
+            );
     }
 }
