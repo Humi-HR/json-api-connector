@@ -1,1 +1,6 @@
+.DS_Store
 /vendor
+/.idea
+/.vagrant
+_ide_helper.php
+.vscode

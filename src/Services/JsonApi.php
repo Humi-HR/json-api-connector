@@ -118,7 +118,7 @@ abstract class JsonApi
                     $this->mapQueryParams($queryParams)
                 )
             );
-            
+
         $request = new Request(
             SymfonyRequest::METHOD_POST,
             $this->getRequestUrl($endpoint),
@@ -345,7 +345,7 @@ abstract class JsonApi
         // Collection
         $data = collect($data)->map(
             function ($entity) {
-                $entity['attributes']['id'] = (int)data_get($entity, 'id');
+                $entity['attributes']['id'] = data_get($entity, 'id');
                 $entity['attributes']['relationships'] = data_get($entity, 'relationships');
                 $entity['attributes']['includeJson'] = data_get($entity, 'included');
 
