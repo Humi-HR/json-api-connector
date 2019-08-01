@@ -1,25 +1,23 @@
 {
-    "name": "humi/json-api-connector",
-    "authors": [
+  "name": "humi/json-api-connector",
+  "version": "v0.0.2",
+  "authors": [
     {
-        "name": "Humi",
-        "email": "dev@humi.ca"
-    }],
-    "require":
-    {},
-    "require-dev":
-    {
-        "orchestra/testbench": "^3.5",
-        "phpunit/phpunit": "7.5.x-dev",
-        "guzzlehttp/guzzle": "^6.3@dev"
-    },
-    "minimum-stability": "dev",
-    "autoload":
-    {
-        "psr-4":
-        {
-            "Humi\\JsonApiConnector\\": "src/",
-            "Humi\\JsonApiConnector\\Tests\\": "tests/"
-        }
+      "name": "Humi",
+      "email": "dev@humi.ca"
     }
+  ],
+  "require": {},
+  "require-dev": {
+    "orchestra/testbench": "^3.5",
+    "phpunit/phpunit": "7.5.x-dev",
+    "guzzlehttp/guzzle": "^6.3@dev"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Humi\\JsonApiConnector\\": "src/",
+      "Humi\\JsonApiConnector\\Tests\\": "tests/"
+    }
+  }
 }
