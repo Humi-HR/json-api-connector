@@ -335,7 +335,9 @@ abstract class JsonApi
         // Entity
         $attributes = data_get($content, 'data.attributes');
         if (is_array($attributes)) {
-            $attributes['id'] = data_get($content, 'data.id');
+            $id = data_get($content, 'data.id');
+
+            $attributes['id'] = is_int($id) ? (int) $id : $id;
             $attributes['relationships'] = data_get($content, 'data.relationships');
             $attributes['includeJson'] = data_get($content, 'included');
 
