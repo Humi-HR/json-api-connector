@@ -56,17 +56,19 @@ class Company extends JsonResource implements ApiResource
 
 You can replace variables in routes using handelbars in your `getEndpoint()` response
 
-```
+```php
     public static function getEndpoint(): string
     {
         return '/companies/{companyId}/benefits';
     }
- ```
+    
+    public function setCompanyId($companyId)
+```
 
 Ensure you populate the variable on the resource prior to any calls
 
-```
-    $resource->companyId = 5;
+```php
+    $resource->setCompanyId(5);
 ```
 
 ## Calling the resource
