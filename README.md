@@ -62,7 +62,10 @@ You can replace variables in routes using handelbars in your `getEndpoint()` res
         return '/companies/{companyId}/benefits';
     }
     
-    public function setCompanyId($companyId)
+    public function setCompanyId($companyId): void
+    {
+        $this->companyId = $companyId;
+    }
 ```
 
 Ensure you populate the variable on the resource prior to any calls
