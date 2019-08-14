@@ -29,6 +29,22 @@ class PayrollApi extends JsonApi
 }
 ```
 
+You can replace handlebar variables in your resource routes by setting some magic params on the service
+
+```php    
+    public function forCompany($companyId): void
+    {
+        $this->setCompanyId($companyId);
+        return $this;
+    }
+```
+
+Ensure you chain the method on the service before passing it a resource
+
+```php
+    $api->forCompany(5)->index();
+```
+
 ## Json Resources
 
 Use the base laravel json api class to represent your external resources.
@@ -52,26 +68,6 @@ class Company extends JsonResource implements ApiResource
             'attributes' => []
         ]
     }
-```
-
-You can replace variables in routes using handelbars in your `getEndpoint()` response
-
-```php
-    public static function getEndpoint(): string
-    {
-        return '/companies/{companyId}/benefits';
-    }
-    
-    public function setCompanyId($companyId): void
-    {
-        $this->companyId = $companyId;
-    }
-```
-
-Ensure you populate the variable on the resource prior to any calls
-
-```php
-    $resource->setCompanyId(5);
 ```
 
 ## Calling the resource
