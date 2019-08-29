@@ -1,7 +1,7 @@
 <?php
 namespace Humi\JsonApiConnector\Http\Resources;
 
-use JsonResourceCollection;
+use Humi\JsonApiConnector\Http\Resources\JsonResourceCollection;
 
 class ResourceCollector extends JsonResourceCollection
 {
