@@ -3,6 +3,8 @@
 namespace Humi\JsonApiConnector\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource as BaseJsonResource;
+use Illuminate\Http\Resources\Json\JsonResourceCollection as BaseJsonResourceCollection;
+use ResourceCollector;
 use Illuminate\Support\Collection;
 
 abstract class JsonResource extends BaseJsonResource
@@ -21,6 +23,11 @@ abstract class JsonResource extends BaseJsonResource
         }
 
         return $this->resource->{$key};
+    }
+
+    public static function collect($data): BaseJsonResourceCollection
+    {
+        return new ResourceCollector(static::class, $data);
     }
 
     public function setType(string $type)
