@@ -26,7 +26,7 @@ abstract class JsonResource extends BaseJsonResource
         return $this->resource->{$key};
     }
 
-    public static function collect($data): JsonResourceCollection
+    public static function collect($data)
     {
         return new ResourceCollector(static::class, $data);
     }
