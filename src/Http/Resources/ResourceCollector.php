@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Resources;
+namespace Humi\JsonApiConnector\Http\Resources;
 
 use JsonResourceCollection;
 

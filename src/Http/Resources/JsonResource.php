@@ -4,7 +4,7 @@ namespace Humi\JsonApiConnector\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource as BaseJsonResource;
 use Illuminate\Http\Resources\Json\JsonResourceCollection as BaseJsonResourceCollection;
-use ResourceCollector;
+use Humi\JsonApiConnector\Http\Resources\ResourceCollector;
 use Illuminate\Support\Collection;
 
 abstract class JsonResource extends BaseJsonResource
