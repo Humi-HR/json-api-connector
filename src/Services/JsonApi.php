@@ -12,13 +12,12 @@ use InvalidArgumentException;
 use stdClass;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Exception;
-use Psr\Http\Message\StreamInterface;
 
 abstract class JsonApi
 {
     private $client;
 
-    private $params;
+    protected $params;
 
     private $defaultUrl = '';
     private $defaultHeaders = [];
