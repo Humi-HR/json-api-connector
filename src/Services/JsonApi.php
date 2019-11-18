@@ -39,7 +39,7 @@ abstract class JsonApi
     /**
      * Perform an Index request against the api service
      */
-    public function index(string $resourceClass, array $queryParams = [])
+    public function index(string $resourceClass, array $queryParams = [], string $customEndpoint = null)
     {
         $resourceClassInst = new $resourceClass(collect(), [], false);
 
@@ -55,7 +55,7 @@ abstract class JsonApi
             'First argument should be a ResourceCollection'
         );
 
-        $endpoint = $this->determineRequestUrl($collectResourceClass, 'index');
+        $endpoint = $customEndpoint ?? $this->determineRequestUrl($collectResourceClass, 'index');
 
         $endpoint .= '?' .
             urldecode(
