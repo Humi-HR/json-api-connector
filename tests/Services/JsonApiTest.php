@@ -271,8 +271,7 @@ class JsonApiTest extends TestCase
     private function createApi($client)
     {
         $logger = $this->createMock(LoggerInterface::class);
-        $logger->method('info')
-            ->willReturn(true);
+        $logger->method('info');
 
         return new class($client, $logger) extends JsonApi
         {
