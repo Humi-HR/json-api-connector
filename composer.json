@@ -10,12 +10,12 @@
     "require": {
         "php": "^7.1.8",
         "guzzlehttp/guzzle": "^6.3@dev",
-        "illuminate/http": "^5.8",
-        "illuminate/support": "^5.8"
+        "illuminate/http": "^6.0",
+        "illuminate/support": "^6.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.5",
-        "phpunit/phpunit": "^7.5"
+        "orchestra/testbench": "^3.9",
+        "phpunit/phpunit": "^8.0"
     },
     "minimum-stability": "dev",
     "autoload": {
