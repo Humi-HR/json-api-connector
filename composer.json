@@ -8,13 +8,15 @@
         }
     ],
     "require": {
-        "php": "^7.2 || 8.0",
+        "php": "^7.2 || 8.0.*",
         "guzzlehttp/guzzle": "^7.0",
-        "illuminate/http": "^6.0",
-        "illuminate/support": "^6.0"
+        "illuminate/http": "^7.0",
+        "illuminate/support": "^7.0",
+        "symfony/string": "^5.1",
+        "psr/log": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.9",
+        "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^8.0"
     },
     "minimum-stability": "dev",
