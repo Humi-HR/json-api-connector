@@ -1,7 +1,6 @@
 {
     "name": "humi/json-api-connector",
     "description": "Allows for simple API communication with a JsonApi compatible endpoint",
-    "version": "v0.1.0",
     "authors": [
         {
             "name": "Humi",
