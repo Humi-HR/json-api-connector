@@ -1,0 +1,34 @@
+name: "Bump Version"
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  draft-release:
+    name: "Draft Release"
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+        with:
+          semver_only: true
+
+      - uses: actions-ecosystem/action-bump-semver@v1
+        id: bump-semver
+        with:
+          current_version: ${{ steps.get-latest-tag.outputs.tag }}
+          level: patch
+
+      - name: Create Release
+        id: create-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ steps.bump-semver.outputs.new_version }}
+          tag_name: ${{ steps.bump-semver.outputs.new_version }}
+          draft: false
+          prerelease: false
