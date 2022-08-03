@@ -2,16 +2,17 @@
 
 namespace Humi\JsonApiConnector\Services;
 
-use Humi\JsonApiConnector\Interfaces\ApiResource;
-use Humi\JsonApiConnector\Exceptions\JsonApiException;
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Humi\JsonApiConnector\Interfaces\ApiResource;
+use Humi\JsonApiConnector\Exceptions\JsonApiException;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use stdClass;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
-use Exception;
 
 abstract class JsonApi
 {
@@ -373,7 +374,7 @@ abstract class JsonApi
             'Method ' . $funcName . ' does not exist on resource'
         );
 
-        $key = camel_case(str_replace('set', '', $funcName));
+        $key = Str::camel(str_replace('set', '', $funcName));
         $this->params->$key = $arguments[0];
 
         return $this;
