@@ -5,3 +5,5 @@
 _ide_helper.php
 .vscode
 /.phpunit.result.cache
+# For packages it's better not to rely on the lockfile
+/composer.lock
