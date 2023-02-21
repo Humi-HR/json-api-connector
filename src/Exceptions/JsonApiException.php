@@ -14,8 +14,8 @@ class JsonApiException extends Exception
     public function __construct(
         $message,
         $code,
-        $errorTitle = null,
-        $internalCode = null,
+        $errorTitle = "",
+        $internalCode = "",
         $meta = [],
         Throwable $throwable = null
     )
