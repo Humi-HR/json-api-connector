@@ -14,10 +14,10 @@ class JsonApiException extends Exception
     public function __construct(
         $message,
         $code,
+        Throwable $throwable = null,
         $errorTitle = "",
         $internalCode = "",
-        $meta = [],
-        Throwable $throwable = null
+        $meta = []
     )
     {
         parent::__construct($message, $code, $throwable);
