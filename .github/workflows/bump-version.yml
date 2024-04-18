@@ -6,10 +6,10 @@ on:
 jobs:
   draft-release:
     name: "Draft Release"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
