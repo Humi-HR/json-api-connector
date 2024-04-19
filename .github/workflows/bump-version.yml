@@ -10,25 +10,20 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - uses: actions-ecosystem/action-get-latest-tag@v1
-        id: get-latest-tag
         with:
-          semver_only: true
+          fetch-depth: 0
 
-      - uses: actions-ecosystem/action-bump-semver@v1
+      - name: Bump SemVer
         id: bump-semver
-        with:
-          current_version: ${{ steps.get-latest-tag.outputs.tag }}
-          level: patch
+        uses: paulhatch/semantic-version@v5.3.0
+        with: 
+          tag_prefix: "v"
+          bump_each_commit: true
 
       - name: Create Release
-        id: create-release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
-          release_name: ${{ steps.bump-semver.outputs.new_version }}
-          tag_name: ${{ steps.bump-semver.outputs.new_version }}
+          tag_name: ${{ steps.bump-semver.outputs.version_tag }}
+          name: ${{ steps.bump-semver.outputs.version_tag }}
           draft: false
           prerelease: false
